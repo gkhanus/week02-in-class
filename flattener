@@ -1,0 +1,9 @@
+def flattener(list: List[List[Int]]): List[Int] = list match
+{
+  case Nil => Nil
+  case Nil :: tail => flattener(tail)
+  case (hHead :: hTail) :: tail => hHead :: flattener(hTail :: tail)
+}
+
+val x = List(Nil,List(4,5))
+println(flattener(x))
